@@ -1,5 +1,5 @@
 import { useEffect } from '@lynx-js/react'
-import { MainApp } from './MainApp'
+import { MainApp } from './MainApp.jsx'
 
 export function App() {
   useEffect(() => {
@@ -7,4 +7,4 @@ export function App() {
   }, [])
 
   return <MainApp />
-}
+} 
