@@ -4,7 +4,7 @@
 *.log*
 
 # Dist
-node_modules
+node_modules/
 dist/
 
 # IDE
@@ -13,3 +13,6 @@ dist/
 .idea
 
 .env
+.env.local
+.env.development
+.env.production
