@@ -23,11 +23,11 @@
 
 .circle-search-progress {
   position: absolute;
-  width: 160px;
-  height: 160px;
-  border-radius: 80px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.25);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,29 +43,31 @@
 }
 
 .circle-search-progress-fill {
-  width: 150px;
-  height: 150px;
-  border-radius: 75px;
-  background-color: rgba(100, 149, 237, 0.7);
+  width: 170px;
+  height: 170px;
+  border-radius: 85px;
+  background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
   transform: scale(0);
   transform-origin: center;
   transition: transform 0.1s linear;
+  box-shadow: 0 5px 20px rgba(67, 97, 238, 0.25);
 }
 
 .circle-search {
   position: relative;
-  width: 80%;
+  width: 85%;
   max-width: 500px;
-  min-height: 200px;
+  min-height: 220px;
   background-color: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   z-index: 1003;
   animation: slideUp 0.3s ease-out forwards;
+  border: 1px solid rgba(230, 230, 250, 0.5);
 }
 
 @keyframes slideUp {
@@ -81,62 +83,74 @@
 
 .circle-search-header {
   text-align: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eef2ff;
 }
 
 .circle-search-header text {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: #4361ee;
+  letter-spacing: 0.5px;
 }
 
 .circle-search-input {
-  height: 48px;
-  border-radius: 24px;
-  border: 1px solid #ddd;
-  padding: 0 16px;
+  height: 52px;
+  border-radius: 26px;
+  border: 1px solid #e6eeff;
+  padding: 0 20px;
   font-size: 16px;
   outline: none;
+  background-color: #f8faff;
+  box-shadow: 0 2px 10px rgba(67, 97, 238, 0.05) inset;
+  transition: all 0.3s ease;
 }
 
 .circle-search-input:focus {
-  border-color: #6495ed;
-  box-shadow: 0 0 0 2px rgba(100, 149, 237, 0.2);
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
 }
 
 .circle-search-button-container {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
+  margin-top: 8px;
 }
 
 .circle-search-button {
   flex: 1;
-  height: 44px;
-  border-radius: 22px;
+  height: 50px;
+  border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: all 0.2s ease;
 }
 
 .circle-search-button.search {
-  background-color: #6495ed;
+  background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
 }
 
 .circle-search-button.cancel {
-  background-color: #f0f0f0;
+  background-color: #f6f8ff;
+  border: 1px solid #e6eeff;
 }
 
 .circle-search-button:active {
   transform: scale(0.98);
 }
 
+.circle-search-button.search:active {
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.15);
+}
+
 .circle-search-button-text {
   font-size: 16px;
   font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .circle-search-button.search .circle-search-button-text {
@@ -144,5 +158,5 @@
 }
 
 .circle-search-button.cancel .circle-search-button-text {
-  color: #555;
+  color: #4361ee;
 } 

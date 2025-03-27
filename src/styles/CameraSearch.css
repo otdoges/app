@@ -1,0 +1,236 @@
+.camera-search-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.camera-search-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1001;
+}
+
+.camera-search-modal {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  z-index: 1002;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: cameraModalFadeIn 0.3s ease-out forwards;
+  border: 1px solid rgba(230, 230, 250, 0.5);
+}
+
+@keyframes cameraModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.camera-search-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+  position: relative;
+}
+
+.camera-search-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.camera-search-close {
+  position: absolute;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.camera-search-close:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.camera-search-content {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.camera-search-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 320px;
+  background-color: #f0f7ff;
+  border-radius: 20px;
+  border: 2px dashed #c7d2fe;
+}
+
+.camera-placeholder-icon {
+  font-size: 60px;
+  color: #4361ee;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.camera-placeholder-text {
+  font-size: 17px;
+  color: #4361ee;
+  text-align: center;
+  max-width: 250px;
+  line-height: 1.5;
+}
+
+.camera-search-video {
+  width: 100%;
+  height: 320px;
+  border-radius: 20px;
+  object-fit: cover;
+  background-color: #000;
+  border: 2px solid #4361ee;
+  box-shadow: 0 8px 16px rgba(67, 97, 238, 0.15);
+}
+
+.camera-search-canvas {
+  display: none;
+}
+
+.camera-search-preview {
+  width: 100%;
+  height: 320px;
+  border-radius: 20px;
+  object-fit: contain;
+  background-color: #f0f7ff;
+  border: 2px solid #4361ee;
+  box-shadow: 0 8px 16px rgba(67, 97, 238, 0.15);
+}
+
+.camera-search-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.camera-search-button {
+  flex: 1;
+  max-width: 180px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.camera-search-capture {
+  background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+  color: white;
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+}
+
+.camera-search-capture:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.15);
+}
+
+.camera-search-retry {
+  background-color: #eef2ff;
+  color: #4361ee;
+  border: 1px solid #e6eeff;
+}
+
+.camera-search-retry:active {
+  background-color: #dce6ff;
+  transform: scale(0.98);
+}
+
+.camera-search-button-icon {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.camera-search-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1003;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.camera-search-spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  border: 3px solid rgba(67, 97, 238, 0.2);
+  border-top-color: #4361ee;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.camera-search-loading-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #4361ee;
+}
+
+.camera-search-error {
+  padding: 16px;
+  background-color: #ffeff3;
+  border-radius: 16px;
+  border-left: 4px solid #ff4d6d;
+  margin-top: 16px;
+}
+
+.camera-search-error-text {
+  color: #c9184a;
+  font-size: 15px;
+  line-height: 1.4;
+} 
